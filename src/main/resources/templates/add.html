@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dodaj zadanie</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <a href="/">Powrót do strony głównej</a><br/>
+
+    <h1>Dodaj nowe zadanie</h1>
+    <div class="form-group">
+        <form method="post" action="/dodaj">
+            Nazwa: <input type="text" name="name"><br/>
+            Opis: <textarea name="description"></textarea><br/>
+            Termin: <input type="date" name="deadline"><br/>
+            Czy zrobione: <input type="checkbox" name="done"><br/>
+            <input type="submit" value="Dodaj">
+        </form>
+    </div>
+</body>
+</html>
