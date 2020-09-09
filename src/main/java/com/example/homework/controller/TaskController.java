@@ -37,7 +37,7 @@ public class TaskController {
 
     @GetMapping("/lista")
     public String list(Model model, @RequestParam boolean done) {
-        List<Task> tasks = taskRepository.findByDoneEquals(done);
+        List<Task> tasks = taskRepository.findByDoneEqualsOrderByDeadlineAsc(done);
         model.addAttribute("tasks", tasks);
         model.addAttribute("task", new Task());
         model.addAttribute("taskDone", done);
