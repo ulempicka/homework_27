@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.sql.Date;
 
 @Entity
 public class Task {
@@ -13,7 +14,7 @@ public class Task {
     private Long id;
     private String name;
     private String description;
-    private String deadline;
+    private Date deadline;
     private boolean done;
 
     public Task() {
@@ -43,11 +44,11 @@ public class Task {
         this.description = description;
     }
 
-    public String getDeadline() {
+    public Date getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(String deadline) {
+    public void setDeadline(Date deadline) {
         this.deadline = deadline;
     }
 

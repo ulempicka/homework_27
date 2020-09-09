@@ -40,7 +40,15 @@ public class TaskController {
         List<Task> tasks = taskRepository.findByDoneEquals(done);
         model.addAttribute("tasks", tasks);
         model.addAttribute("task", new Task());
-        model.addAttribute("done", done);
+        model.addAttribute("taskDone", done);
         return "list";
+    }
+
+    @GetMapping("/wykonane")
+    public String markAsDone(@RequestParam Long id){
+        Task task = taskRepository.findById(id).orElse(null);
+        task.setDone(true);
+        taskRepository.save(task);
+        return "redirect:/lista?done=true";
     }
 }
