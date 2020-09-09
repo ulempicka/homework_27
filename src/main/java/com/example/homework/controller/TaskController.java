@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -41,6 +42,7 @@ public class TaskController {
         model.addAttribute("tasks", tasks);
         model.addAttribute("task", new Task());
         model.addAttribute("taskDone", done);
+        model.addAttribute("now", java.time.LocalDate.now());
         return "list";
     }
 

@@ -5,6 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.sql.Date;
+import java.time.LocalDate;
 
 @Entity
 public class Task {
@@ -14,7 +15,7 @@ public class Task {
     private Long id;
     private String name;
     private String description;
-    private Date deadline;
+    private LocalDate deadline;
     private boolean done;
 
     public Task() {
@@ -44,11 +45,11 @@ public class Task {
         this.description = description;
     }
 
-    public Date getDeadline() {
+    public LocalDate getDeadline() {
         return deadline;
     }
 
-    public void setDeadline(Date deadline) {
+    public void setDeadline(LocalDate deadline) {
         this.deadline = deadline;
     }
 
